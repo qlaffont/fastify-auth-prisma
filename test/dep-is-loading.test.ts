@@ -10,16 +10,11 @@ import makeServer from './core/server';
 let server: FastifyInstance;
 
 describe('Deps loading', () => {
-  beforeEach(() => {
-    server = makeServer();
+  beforeEach(async () => {
+    server = await makeServer();
   });
 
   it('Check if plugin is loaded', async () => {
-    const response = await server.inject({
-      method: 'GET',
-      url: '/test',
-    });
-    console.log(response.body);
-    expect(response.statusCode).toBe(401);
+    expect(server.printPlugins()).toContain('fastify-auth-prisma');
   });
 });

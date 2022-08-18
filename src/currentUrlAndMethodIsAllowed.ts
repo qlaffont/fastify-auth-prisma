@@ -2,22 +2,36 @@ import { HTTPMethods } from 'fastify';
 
 import { FastifyAuthPrismaUrlConfig } from '.';
 
+const methods = [
+  'DELETE',
+  'GET',
+  'HEAD',
+  'PATCH',
+  'POST',
+  'PUT',
+  'OPTIONS',
+  'PROPFIND',
+  'PROPPATCH',
+  'MKCOL',
+  'COPY',
+  'MOVE',
+  'LOCK',
+  'UNLOCK',
+  'TRACE',
+  'SEARCH',
+] as HTTPMethods[];
+
 const addUrl = (
   u: string,
   m: HTTPMethods | '*',
   urls: FastifyAuthPrismaUrlConfig[],
 ): FastifyAuthPrismaUrlConfig[] => {
   if (m === '*') {
-    urls.push({ url: u, method: 'GET' });
-    urls.push({ url: u, method: 'POST' });
-    urls.push({ url: u, method: 'PUT' });
-    urls.push({ url: u, method: 'PATCH' });
-    urls.push({ url: u, method: 'DELETE' });
-    urls.push({ url: u, method: 'COPY' });
-    urls.push({ url: u, method: 'HEAD' });
-    urls.push({ url: u, method: 'OPTIONS' });
+    for (const HTTPMethod of methods) {
+      urls.push({ url: u, method: HTTPMethod });
+    }
   } else {
-    urls.push({ url: u, method: m.toUpperCase() as HTTPMethods });
+    urls.push({ url: u, method: m as HTTPMethods });
   }
 
   return urls;

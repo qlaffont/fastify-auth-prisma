@@ -1,103 +1,161 @@
-# TSDX User Guide
+[![Maintainability](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/maintainability)](https://codeclimate.com/github/flexper/fastify-auth-prisma/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/test_coverage)](https://codeclimate.com/github/flexper/fastify-auth-prisma/test_coverage) ![npm](https://img.shields.io/npm/v/fastify-auth-prisma) ![npm](https://img.shields.io/npm/dm/fastify-auth-prisma) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/fastify-auth-prisma) ![NPM](https://img.shields.io/npm/l/fastify-auth-prisma)
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+# Fastify-Auth-Prisma
 
-> This TSDX setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
+Fastify plugin with Prisma to make simple & secure authentification middleware.
 
-> If you’re new to TypeScript, checkout [this handy cheatsheet](https://devhints.io/typescript)
-
-## Commands
-
-TSDX scaffolds your new library inside `/src`.
-
-To run TSDX, use:
+## Usage
 
 ```bash
-npm start # or yarn start
+
+pnpm install fastify-auth-prisma unify-fastify prisma @prisma/client
+
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+[Initialize Prisma](https://www.prisma.io/docs/getting-started) and create a similar schema.prisma
 
-To do a one-off build, use `npm run build` or `yarn build`.
+```prisma
+model Token {
+  id           String @id @unique @default(uuid())
+  refreshToken String
+  accessToken  String
 
-To run tests, use `npm test` or `yarn test`.
+  owner   User   @relation(fields: [ownerId], references: [id])
+  ownerId String
 
-## Configuration
-
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`.
-
-### Bundle Analysis
-
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-### Rollup
-
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
+  createdAt DateTime @default(now())
 }
+
+model User {
+  id            String  @id @unique @default(uuid())
+
+  tokens          Token[]
+
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
 ```
 
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+Add your plugin in your fastify server
 
-## Module Formats
+```typescript
+import fastify from 'fastify';
+import { PrismaClient } from '@prisma/client';
+import unifyFastifyPlugin from 'unify-fastify';
+import {fastifyAuthPrismaPlugin} from 'fastify-auth-prisma';
 
-CJS, ESModules, and UMD module formats are supported.
+const prisma = new PrismaClient();
+const server = fastify();
 
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+await server.register(unifyFastifyPlugin, { hideContextOnProd: false });
 
-## Named Exports
+await server.register(fastifyAuthPrismaPlugin, {
+  config: [{url: "/public/*", method: 'GET'}],
+  prisma,
+  secret: process.env.JWT_ACCESS_SECRET, // Recommanded to use an external variable but you can use any generated string
+});
+```
 
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
+## API
 
-## Including Styles
+### fastifyAuthPrismaPlugin
 
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
+**Options**
 
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
+| Field Name     | Type                                             | Description                                                                        |
+| -------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| config         | {url: string, method: HttpMethods}[]             | Specify which urls are allowed without valid token                                 |
+| secret         | string                                           | Secret use for accessToken generation                                              |
+| prisma         | Prisma Client                                    |                                                                                    |
+| userValidation | (user: Prisma[User]) => Promise<void> [OPTIONAL] | Function to run to add userValidation on request (ex: isBanned / isEmailValidated) |
 
-## Publishing to NPM
+**Return**
 
-We recommend using [np](https://github.com/sindresorhus/np).
+| Field Name  | Type           | Description                   |
+| ----------- | -------------- | ----------------------------- |
+| user        | Prisma["User"] | Connected user                |
+| isConnected | boolean        | Return if a user is connected |
+
+### createUserToken(prisma)(userId, {secret, refreshSecret, accessTokenTime, refreshTokenTime})
+
+**Options**
+| Field Name       | Type          | Description                                                                         |
+| ---------------- | ------------- | ----------------------------------------------------------------------------------- |
+| prisma           | Prisma Client |                                                                                     |
+| userId           | string        |                                                                                     |
+| secret           | string        | Secret use for accessToken generation                                               |
+| refreshSecret    | string?       | Secret use for refreshToken generation                                              |
+| accessTokenTime  | string        | Time validity for accessToken [Help for time format](https://github.com/vercel/ms)  |
+| refreshTokenTime | string        | Time validity for refreshToken [Help for time format](https://github.com/vercel/ms) |
+
+**Return**
+
+| Field Name   | Type   | Description |
+| ------------ | ------ | ----------- |
+| accessToken  | string |             |
+| refreshToken | string |             |
+
+### removeUserToken(prisma)(accessToken)
+
+**Options**
+| Field Name  | Type          | Description |
+| ----------- | ------------- | ----------- |
+| prisma      | Prisma Client |             |
+| accessToken | string        |             |
+
+**Return** void
+
+### removeAllUserTokens(prisma)(userId)
+
+**Options**
+| Field Name | Type          | Description |
+| ---------- | ------------- | ----------- |
+| prisma     | Prisma Client |             |
+| userId     | string        |             |
+
+**Return** void
+
+### refreshUserToken(prisma)(refreshToken, { secret, accessTokenTime })
+
+**Options**
+| Field Name      | Type          | Description                                                                        |
+| --------------- | ------------- | ---------------------------------------------------------------------------------- |
+| prisma          | Prisma Client |                                                                                    |
+| refreshToken    | string        | Secret use for refreshToken generation                                             |
+| secret          | string        | Secret use for accessToken generation                                              |
+| accessTokenTime | string        | Time validity for accessToken [Help for time format](https://github.com/vercel/ms) |
+
+**Return**
+
+| Field Name   | Type   | Description |
+| ------------ | ------ | ----------- |
+| accessToken  | string |             |
+| refreshToken | string |             |
+
+## Config Array
+
+To configure your public routes, you need to specify your url and your method. You can use some alias too :
+
+- Standard example : `{url: '/test/toto', method: 'GET'}`
+- Match url who start with test : `{url: '/test/*', method: 'GET'}`
+- Match all methods for this url : `{url: '/test/toto', method: '*'}`
+- Match url who contain dynamic variable in it : `{url: '/test/:var1/test', method: 'GET'}`
+
+You can combine all this options of course ! `{url: '/test/:testvar/toto/*', method: '*'}`
+
+## Test
+
+To test this package, you need to run a PostgresSQL server :
+
+```bash
+
+docke-compose up -d
+chmod -R 777 docker
+pnpm prisma migrate deploy
+pnpm test
+```
+
+## Maintain
+
+This package use [TSdx](https://github.com/jaredpalmer/tsdx). Please check documentation to update this package.

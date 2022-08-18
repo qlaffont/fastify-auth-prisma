@@ -1,10 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@jest/globals': ^28.1.3
-  '@prisma/client': ^4.2.1
-  '@size-limit/preset-small-lib': ^8.0.1
-  '@types/jsonwebtoken': ^8.5.8
+  '@jest/globals': 28.1.3
+  '@prisma/client': 4.2.1
+  '@size-limit/preset-small-lib': 8.0.1
+  '@types/jsonwebtoken': 8.5.8
   '@typescript-eslint/eslint-plugin': 5.33.1
   '@typescript-eslint/parser': 5.33.1
   eslint: 8.22.0
@@ -14,16 +14,16 @@ specifiers:
   eslint-plugin-simple-import-sort: 7.0.0
   fastify: ^4.5.0
   fastify-plugin: ^4.2.0
-  husky: ^8.0.1
+  husky: 8.0.1
   jsonwebtoken: ^8.5.1
   prettier: 2.7.1
-  prisma: ^4.2.1
-  size-limit: ^8.0.1
-  tsdx: ^0.14.1
-  tslib: ^2.4.0
-  typescript: ^4.7.4
+  prisma: 4.2.1
+  size-limit: 8.0.1
+  tsdx: 0.14.1
+  tslib: 2.4.0
+  typescript: 4.7.4
   unify-errors: ^1.2.13
-  unify-fastify: ^1.2.2
+  unify-fastify: 1.2.4
 
 dependencies:
   fastify: 4.5.0
@@ -50,7 +50,7 @@ devDependencies:
   tsdx: 0.14.1
   tslib: 2.4.0
   typescript: 4.7.4
-  unify-fastify: 1.2.2
+  unify-fastify: 1.2.4
 
 packages:
 
@@ -8030,8 +8030,8 @@ packages:
     resolution: {integrity: sha512-TLx/UciomKzpfG8jAf0aXBTWln3iF9jA5/ExdfbdIxktx2CJJvJWWrk0rkDOhCqZtqjmDL6RB7pR/iJP2kiY1Q==}
     engines: {node: '>=10'}
 
-  /unify-fastify/1.2.2:
-    resolution: {integrity: sha512-ThQubzOgtYGDE0T2l40a2AYUFEk04q+iWQXwaSKc2F71fR1qfJNh3Uj+b6Eh1AFirS7871k/YO2uHzsRiHSLSw==}
+  /unify-fastify/1.2.4:
+    resolution: {integrity: sha512-yOHBpPx4DfGo0e7gP2xIe5gY3WLd6cL7jcsGjcl+XrmgiLifNAKz4d4wzj20Hi8/61MShdZuXYWBBzeoula0Bw==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.5.0
@@ -8122,7 +8122,7 @@ packages:
     dev: true
 
   /verror/1.10.0:
-    resolution: {integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=}
+    resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
     engines: {'0': node >=0.6.0}
     dependencies:
       assert-plus: 1.0.0
