@@ -19,7 +19,10 @@ describe('Deps loading', () => {
       method: 'GET',
       url: '/test',
     });
-    console.log(response.body);
     expect(response.statusCode).toBe(401);
+    expect(JSON.parse(response.body)).toStrictEqual({
+      error: 'Unauthorized',
+      context: { error: 'Valid token is missing' },
+    });
   });
 });

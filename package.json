@@ -72,7 +72,7 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
-    "unify-fastify": "^1.2.2"
+    "unify-fastify": "^1.2.3"
   },
   "dependencies": {
     "fastify": "^4.5.0",

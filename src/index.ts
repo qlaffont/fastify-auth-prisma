@@ -92,7 +92,6 @@ const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
           config,
         )
       ) {
-        console.log('oucoucu');
         throw new Unauthorized({
           error: 'Valid token is missing',
         });
