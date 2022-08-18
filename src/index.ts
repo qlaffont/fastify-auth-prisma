@@ -8,7 +8,7 @@ import fp from 'fastify-plugin';
 import { verify } from 'jsonwebtoken';
 import { Unauthorized } from 'unify-errors';
 
-import { currentUrlAndMethodIsAllowed } from './validateUrlIsPublic';
+import { currentUrlAndMethodIsAllowed } from './currentUrlAndMethodIsAllowed';
 
 declare module 'fastify' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -21,31 +21,37 @@ declare module 'fastify' {
 
 export interface FastifyAuthPrismaUrlConfig {
   url: string;
-  method: HTTPMethods;
+  method: HTTPMethods | '*';
 }
 
 export interface Options {
-  config: FastifyAuthPrismaUrlConfig[];
+  config?: FastifyAuthPrismaUrlConfig[];
   secret: string;
   //@ts-ignore
   prisma;
   userValidation?: (user: unknown) => Promise<void>;
 }
 
-const getAccessToken = (req: FastifyRequest) =>
-  req.headers.authorization ||
-  req.headers.Authorization ||
-  (req.query as any)?.access_token ||
-  undefined;
+const getAccessToken = (req: FastifyRequest) => {
+  let token: string | undefined;
+
+  if ((req.query as { access_token: string }).access_token) {
+    token = (req.query as { access_token: string }).access_token;
+  }
+
+  if (req.headers.authorization) {
+    token = (req.headers.authorization as string).trim().split(' ')[1];
+  }
+
+  return token;
+};
 
 const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
   async (fastify: FastifyInstance, options: Options) => {
     const config = options?.config || [];
 
     fastify.addHook('preValidation', async (req) => {
-      const tokenValue: string | undefined = getAccessToken(req)
-        ?.trim()
-        ?.split(' ')[1];
+      const tokenValue: string | undefined = getAccessToken(req);
 
       //Check if token existing
       if (tokenValue) {
@@ -59,7 +65,7 @@ const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
           } catch (error) {
             await options.prisma.token.delete({ where: { id: token.id } });
 
-            //If token is not valid
+            //If token is not valid and If user is not connected and url is not public
             if (
               !currentUrlAndMethodIsAllowed(
                 req.url,
@@ -68,9 +74,11 @@ const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
               )
             ) {
               throw new Unauthorized({
-                error: 'Valid token is missing',
+                error: 'Token is not valid',
               });
             }
+
+            return;
           }
 
           const user = await options.prisma.user.findFirst({
@@ -93,10 +101,14 @@ const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
         )
       ) {
         throw new Unauthorized({
-          error: 'Valid token is missing',
+          error: 'Page is not public',
         });
       }
     });
+  },
+  {
+    fastify: '4.x',
+    name: 'fastify-auth-prisma',
   },
 );
 
