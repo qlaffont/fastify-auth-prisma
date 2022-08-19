@@ -6,15 +6,12 @@ import { describe, expect, it } from '@jest/globals';
 import { FastifyInstance } from 'fastify';
 
 import { PrismaClient } from '../prisma/generated/prisma-client-lib.ts';
-import makeServer, { userData } from './core/server';
+import makeServer, { expiredTokenValue, userData } from './core/server';
 import { cleanToken, generateToken } from './core/utils';
 
 let server: FastifyInstance;
 
 const prisma = new PrismaClient();
-
-const expiredTokenValue =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MzE5ZTA0LTA4ZDQtNDUyZi05YTQ2LTljMWY5ZTc5ZTJmMCIsImlhdCI6MTY2MDgyNDg2NSwiZXhwIjoxNjYwODI0ODY2fQ.aZOpXfb-1l-TlYzlaMBo-00J99I_NTP4ELuXpSgS6Lg';
 
 describe('Public/Private page', () => {
   describe('Public', () => {

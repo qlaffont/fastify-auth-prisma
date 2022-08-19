@@ -10,13 +10,15 @@ import {
   PrismaClient,
   User,
 } from '../../prisma/generated/prisma-client-lib.ts';
+import { fastifyAuthPrismaPlugin, FastifyAuthPrismaUrlConfig } from '../../src';
 const prisma = new PrismaClient();
-
-import fastifyAuthPrismaPlugin, { FastifyAuthPrismaUrlConfig } from '../../src';
 
 export const userData = {
   id: '04319e04-08d4-452f-9a46-9c1f9e79e2f0',
 } as User;
+
+export const expiredTokenValue =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA0MzE5ZTA0LTA4ZDQtNDUyZi05YTQ2LTljMWY5ZTc5ZTJmMCIsImlhdCI6MTY2MDgyNDg2NSwiZXhwIjoxNjYwODI0ODY2fQ.aZOpXfb-1l-TlYzlaMBo-00J99I_NTP4ELuXpSgS6Lg';
 
 export const methods = [
   'DELETE',
@@ -62,6 +64,15 @@ const makeServer = async (
   );
 
   await server.get('/not-public-success', successHandler);
+
+  await server.get('/get-req-user', (req: FastifyRequest, res: FastifyReply) =>
+    res.send(req.user || {}),
+  );
+  await server.get(
+    '/get-req-isConnected',
+    (req: FastifyRequest, res: FastifyReply) =>
+      res.send({ isConnected: req.isConnected }),
+  );
 
   const user = await prisma.user.findFirst({
     where: {

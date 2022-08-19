@@ -1,115 +1,17 @@
 import {
-  FastifyInstance,
-  FastifyPluginAsync,
-  FastifyRequest,
-  HTTPMethods,
-} from 'fastify';
-import fp from 'fastify-plugin';
-import { verify } from 'jsonwebtoken';
-import { Unauthorized } from 'unify-errors';
+  fastifyAuthPrismaPlugin as FastifyAuthPrismaPlugin,
+  FastifyAuthPrismaUrlConfig as UrlConfig,
+} from './fastify-auth-plugin';
+import {
+  createUserToken as CreateUserToken,
+  refreshUserToken as RefreshUserToken,
+  removeAllUserTokens as RemoveAllUserTokens,
+  removeUserToken as RemoveUserToken,
+} from './utils';
 
-import { currentUrlAndMethodIsAllowed } from './currentUrlAndMethodIsAllowed';
-
-declare module 'fastify' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface ConnectedUser {}
-  //@ts-ignore
-  interface FastifyRequest {
-    user?: ConnectedUser;
-  }
-}
-
-export interface FastifyAuthPrismaUrlConfig {
-  url: string;
-  method: HTTPMethods | '*';
-}
-
-export interface Options {
-  config?: FastifyAuthPrismaUrlConfig[];
-  secret: string;
-  //@ts-ignore
-  prisma;
-  userValidation?: (user: unknown) => Promise<void>;
-}
-
-const getAccessToken = (req: FastifyRequest) => {
-  let token: string | undefined;
-
-  if ((req.query as { access_token: string }).access_token) {
-    token = (req.query as { access_token: string }).access_token;
-  }
-
-  if (req.headers.authorization) {
-    token = (req.headers.authorization as string).trim().split(' ')[1];
-  }
-
-  return token;
-};
-
-const fastifyAuthPrismaPlugin: FastifyPluginAsync<Options> = fp(
-  async (fastify: FastifyInstance, options: Options) => {
-    const config = options?.config || [];
-
-    fastify.addHook('preValidation', async (req) => {
-      const tokenValue: string | undefined = getAccessToken(req);
-
-      //Check if token existing
-      if (tokenValue) {
-        const token = await options.prisma.token.findFirst({
-          where: { accessToken: tokenValue },
-        });
-
-        if (token) {
-          try {
-            verify(tokenValue, options.secret);
-          } catch (error) {
-            await options.prisma.token.delete({ where: { id: token.id } });
-
-            //If token is not valid and If user is not connected and url is not public
-            if (
-              !currentUrlAndMethodIsAllowed(
-                req.url,
-                req.method as HTTPMethods,
-                config,
-              )
-            ) {
-              throw new Unauthorized({
-                error: 'Token is not valid',
-              });
-            }
-
-            return;
-          }
-
-          const user = await options.prisma.user.findFirst({
-            where: { id: token.ownerId },
-          });
-
-          options.userValidation && (await options.userValidation(user));
-
-          req.user = user;
-          return;
-        }
-      }
-
-      // If user is not connected and url is not public
-      if (
-        !currentUrlAndMethodIsAllowed(
-          req.url,
-          req.method as HTTPMethods,
-          config,
-        )
-      ) {
-        throw new Unauthorized({
-          error: 'Page is not public',
-        });
-      }
-    });
-  },
-  {
-    fastify: '4.x',
-    name: 'fastify-auth-prisma',
-  },
-);
-
-export default fastifyAuthPrismaPlugin;
+export const createUserToken = CreateUserToken;
+export const refreshUserToken = RefreshUserToken;
+export const removeAllUserTokens = RemoveAllUserTokens;
+export const removeUserToken = RemoveUserToken;
+export const fastifyAuthPrismaPlugin = FastifyAuthPrismaPlugin;
+export type FastifyAuthPrismaUrlConfig = UrlConfig;
