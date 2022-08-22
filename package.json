@@ -30,10 +30,10 @@
   "author": "flexper",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flexper/fastify-auth-prism.git"
+    "url": "https://github.com/flexper/fastify-auth-prisma.git"
   },
   "bugs": {
-    "url": "https://github.com/flexper/fastify-auth-prism/issues",
+    "url": "https://github.com/flexper/fastify-auth-prisma/issues",
     "email": "contact@flexper.fr"
   },
   "module": "dist/fastify-auth-prisma.esm.js",
