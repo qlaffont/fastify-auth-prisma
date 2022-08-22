@@ -150,7 +150,7 @@ To test this package, you need to run a PostgresSQL server :
 
 ```bash
 
-docke-compose up -d
+docker-compose up -d
 chmod -R 777 docker
 pnpm prisma migrate deploy
 pnpm test
