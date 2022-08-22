@@ -27,9 +27,12 @@ export const generateToken = async () => {
 };
 
 export const cleanToken = async (token: Token) => {
-  await prisma.token.delete({
-    where: {
-      id: token.id,
-    },
-  });
+  try {
+    await prisma.token.delete({
+      where: {
+        id: token.id,
+      },
+    });
+    // eslint-disable-next-line no-empty
+  } catch (error) {}
 };

@@ -15,7 +15,7 @@ const prisma = new PrismaClient();
 
 declare module 'fastify' {
   interface FastifyRequest {
-    user?: User;
+    connectedUser?: User;
   }
 }
 
@@ -72,7 +72,7 @@ const makeServer = async (
   await server.get('/not-public-success', successHandler);
 
   await server.get('/get-req-user', (req: FastifyRequest, res: FastifyReply) =>
-    res.send(req.user || {}),
+    res.send(req.connectedUser || {}),
   );
   await server.get(
     '/get-req-isConnected',

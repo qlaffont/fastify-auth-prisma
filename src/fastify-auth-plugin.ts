@@ -44,7 +44,7 @@ export const fastifyAuthPrismaPlugin = fp(
   async (fastify: FastifyInstance, options: Options) => {
     const config = options?.config || [];
 
-    fastify.decorateRequest('user', undefined);
+    fastify.decorateRequest('connectedUser', undefined);
     fastify.decorateRequest('isConnected', false);
 
     fastify.addHook('preValidation', async (req) => {
@@ -87,7 +87,7 @@ export const fastifyAuthPrismaPlugin = fp(
           options.userValidation && (await options.userValidation(user));
 
           //@ts-ignore
-          req.user = user;
+          req.connectedUser = user;
           req.isConnected = true;
           return;
         }

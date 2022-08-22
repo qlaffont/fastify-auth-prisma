@@ -11,7 +11,7 @@ import { cleanToken, generateToken } from './core/utils';
 let server: FastifyInstance;
 
 describe('Fastify Decorators', () => {
-  describe('req.user', () => {
+  describe('req.connectedUser', () => {
     it('should be able to get user if connected', async () => {
       server = await makeServer([]);
 

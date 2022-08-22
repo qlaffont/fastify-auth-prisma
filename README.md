@@ -41,12 +41,18 @@ Add your plugin in your fastify server
 
 ```typescript
 import fastify from 'fastify';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, User } from '@prisma/client';
 import unifyFastifyPlugin from 'unify-fastify';
 import {fastifyAuthPrismaPlugin} from 'fastify-auth-prisma';
 
 const prisma = new PrismaClient();
 const server = fastify();
+
+declare module 'fastify' {
+  interface FastifyRequest {
+    connectedUser?: User;
+  }
+}
 
 await server.register(unifyFastifyPlugin, { hideContextOnProd: false });
 
@@ -72,10 +78,10 @@ await server.register(fastifyAuthPrismaPlugin, {
 
 **Return**
 
-| Field Name  | Type           | Description                   |
-| ----------- | -------------- | ----------------------------- |
-| user        | Prisma["User"] | Connected user                |
-| isConnected | boolean        | Return if a user is connected |
+| Field Name    | Type           | Description                   |
+| ------------- | -------------- | ----------------------------- |
+| connectedUser | Prisma["User"] | Connected user                |
+| isConnected   | boolean        | Return if a user is connected |
 
 ### createUserToken(prisma)(userId, {secret, refreshSecret, accessTokenTime, refreshTokenTime})
 
