@@ -26,7 +26,7 @@ export interface Options {
   userValidation?: (user: any) => Promise<void>;
 }
 
-const getAccessToken = (req: FastifyRequest) => {
+export const getAccessTokenFromRequest = (req: FastifyRequest) => {
   let token: string | undefined;
 
   if ((req.query as { access_token: string }).access_token) {
@@ -50,7 +50,7 @@ export const fastifyAuthPrismaPlugin = fp(
     fastify.addHook('preValidation', async (req) => {
       req.isConnected = false;
 
-      const tokenValue: string | undefined = getAccessToken(req);
+      const tokenValue: string | undefined = getAccessTokenFromRequest(req);
 
       //Check if token existing
       if (tokenValue) {

@@ -139,6 +139,15 @@ await server.register(fastifyAuthPrismaPlugin, {
 | accessToken  | string |             |
 | refreshToken | string |             |
 
+### getAccessTokenFromRequest(req)
+
+**Options**
+| Field Name | Type            | Description |
+| ---------- | --------------- | ----------- |
+| req        | Fastify request |             |
+
+**Return** string
+
 ## Config Array
 
 To configure your public routes, you need to specify your url and your method. You can use some alias too :

@@ -1,6 +1,7 @@
 import {
   fastifyAuthPrismaPlugin as FastifyAuthPrismaPlugin,
   FastifyAuthPrismaUrlConfig as UrlConfig,
+  getAccessTokenFromRequest as GetAccessTokenFromRequest,
 } from './fastify-auth-plugin';
 import {
   createUserToken as CreateUserToken,
@@ -14,4 +15,5 @@ export const refreshUserToken = RefreshUserToken;
 export const removeAllUserTokens = RemoveAllUserTokens;
 export const removeUserToken = RemoveUserToken;
 export const fastifyAuthPrismaPlugin = FastifyAuthPrismaPlugin;
+export const getAccessTokenFromRequest = GetAccessTokenFromRequest;
 export type FastifyAuthPrismaUrlConfig = UrlConfig;
