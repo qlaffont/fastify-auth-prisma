@@ -56,7 +56,7 @@ export const currentUrlAndMethodIsAllowed = (
   currentUrl = currentUrl.split('?')[0];
 
   // Remove last slash to be sure to have same url
-  if (currentUrl.slice(-1) === '/') {
+  if (currentUrl !== '/' && currentUrl.slice(-1) === '/') {
     currentUrl = currentUrl.slice(0, -1);
   }
 
