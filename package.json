@@ -55,7 +55,7 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@jest/globals": "29.1.1",
+    "@jest/globals": "29.1.2",
     "@prisma/client": "4.4.0",
     "@size-limit/preset-small-lib": "8.1.0",
     "@types/jsonwebtoken": "8.5.9",
