@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.70 (2022-12-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jsonwebtoken to v9 ([60b2cd2](https://github.com/flexper/fastify-auth-prisma/commit/60b2cd206226220d5a9e29443319247591a4c24c))
+
 ### 1.1.69 (2022-12-20)
 
 ### 1.1.68 (2022-12-19)
