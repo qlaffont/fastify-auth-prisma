@@ -14,7 +14,7 @@ specifiers:
   eslint-plugin-simple-import-sort: 8.0.0
   fastify: ^4.5.0
   fastify-plugin: ^4.2.0
-  husky: 8.0.2
+  husky: 8.0.3
   jsonwebtoken: ^9.0.0
   prettier: 2.8.1
   prisma: 4.8.0
@@ -43,7 +43,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_m2kn7xiag5lymyarkgri27ztxm
   eslint-plugin-prettier: 4.2.1_32m5uc2milwdw3tnkcq5del26y
   eslint-plugin-simple-import-sort: 8.0.0_eslint@8.31.0
-  husky: 8.0.2
+  husky: 8.0.3
   prettier: 2.8.1
   prisma: 4.8.0
   size-limit: 8.1.0
@@ -4742,8 +4742,8 @@ packages:
     resolution: {integrity: sha512-A15OmA3FLFRnehvF4ZMocsxTZYvHq4ze7L+AgR1DeHw0xC9vMd4euInY83uqGU9/XXKNnVIEeKc1R8G8nKqtzg==}
     dev: true
 
-  /husky/8.0.2:
-    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
