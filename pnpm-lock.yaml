@@ -18,7 +18,7 @@ specifiers:
   jsonwebtoken: ^9.0.0
   prettier: 2.8.2
   prisma: 4.8.1
-  size-limit: 8.1.0
+  size-limit: 8.1.1
   tsdx: 0.14.1
   tslib: 2.4.1
   typescript: 4.9.4
@@ -34,7 +34,7 @@ dependencies:
 devDependencies:
   '@jest/globals': 29.3.1
   '@prisma/client': 4.8.1_prisma@4.8.1
-  '@size-limit/preset-small-lib': 8.1.1_size-limit@8.1.0
+  '@size-limit/preset-small-lib': 8.1.1_size-limit@8.1.1
   '@types/jsonwebtoken': 9.0.0
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
@@ -46,7 +46,7 @@ devDependencies:
   husky: 8.0.3
   prettier: 2.8.2
   prisma: 4.8.1
-  size-limit: 8.1.0
+  size-limit: 8.1.1
   tsdx: 0.14.1
   tslib: 2.4.1
   typescript: 4.9.4
@@ -1999,7 +1999,7 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
-  /@size-limit/esbuild/8.1.1_size-limit@8.1.0:
+  /@size-limit/esbuild/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-Y071Vs3M3pxNplE98SFf32IREXSMzBErkO2uAeh3CeZfyUOItpH59ETlmEAAf7blCRrUXhygecJl80NbRNWSsA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -2007,27 +2007,27 @@ packages:
     dependencies:
       esbuild: 0.16.16
       nanoid: 3.3.4
-      size-limit: 8.1.0
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/file/8.1.1_size-limit@8.1.0:
+  /@size-limit/file/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-4VW3r5TuKXGyycrWdhKhYaBSpWQq2sxuz0UOMoKYiTGcYBM6Sqpk4342RbnoIjVDmj7kyD4PS4eBstUnvF3TSA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       size-limit: 8.1.1
     dependencies:
       semver: 7.3.8
-      size-limit: 8.1.0
+      size-limit: 8.1.1
     dev: true
 
-  /@size-limit/preset-small-lib/8.1.1_size-limit@8.1.0:
+  /@size-limit/preset-small-lib/8.1.1_size-limit@8.1.1:
     resolution: {integrity: sha512-AB1v9zQ9F3ii/3xOJQOHmxaPsuQ3BgA99P2NtpOg5l0vP/306k/xfvveZL98a6gk20hIWWysrzrI1ydKeF9Iaw==}
     peerDependencies:
       size-limit: 8.1.1
     dependencies:
-      '@size-limit/esbuild': 8.1.1_size-limit@8.1.0
-      '@size-limit/file': 8.1.1_size-limit@8.1.0
-      size-limit: 8.1.0
+      '@size-limit/esbuild': 8.1.1_size-limit@8.1.1
+      '@size-limit/file': 8.1.1_size-limit@8.1.1
+      size-limit: 8.1.1
     dev: true
 
   /@types/babel__core/7.1.19:
@@ -7326,8 +7326,8 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: true
 
-  /size-limit/8.1.0:
-    resolution: {integrity: sha512-bUL+Uyyt/G+a1XzKlI2WKHVDepmXtqMDhF65pdtjccheiQTNjExWW4nFefgbRL2QgNTzRfK6ayFKjO3o4ER4gg==}
+  /size-limit/8.1.1:
+    resolution: {integrity: sha512-8Zx+SJVxwcsDBYEl3Xt+FilpuxshVcgq446L8e1k8xD+Qa4LuUmFeesb+oiaRpoJnWCrOd7QUaiU9kFVocIeHQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     dependencies:
