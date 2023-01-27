@@ -11,7 +11,7 @@ specifiers:
   eslint-config-prettier: 8.6.0
   eslint-plugin-import: 2.27.5
   eslint-plugin-prettier: 4.2.1
-  eslint-plugin-simple-import-sort: 9.0.0
+  eslint-plugin-simple-import-sort: 10.0.0
   fastify: ^4.5.0
   fastify-plugin: ^4.2.0
   husky: 8.0.3
@@ -42,7 +42,7 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-import: 2.27.5_6savw6y3b7jng6f64kgkyoij64
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
-  eslint-plugin-simple-import-sort: 9.0.0_eslint@8.32.0
+  eslint-plugin-simple-import-sort: 10.0.0_eslint@8.32.0
   husky: 8.0.3
   prettier: 2.8.3
   prisma: 4.9.0
@@ -3914,8 +3914,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-simple-import-sort/9.0.0_eslint@8.32.0:
-    resolution: {integrity: sha512-PtrLjyXP8kjRneWT1n0b99y/2Fyup37we7FVoWsI61/O7x4ztLohzhep/pxI/cYlECr/cQ2j6utckdvWpVwXNA==}
+  /eslint-plugin-simple-import-sort/10.0.0_eslint@8.32.0:
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
