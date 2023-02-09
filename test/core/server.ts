@@ -51,7 +51,7 @@ const makeServer = async (
 ): Promise<FastifyInstance> => {
   const server = fastify();
 
-  await server.register(unifyFastifyPlugin, { hideContextOnProd: false });
+  await server.register(unifyFastifyPlugin);
 
   await server.register(fastifyAuthPrismaPlugin, {
     config,

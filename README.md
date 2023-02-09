@@ -54,7 +54,7 @@ declare module 'fastify' {
   }
 }
 
-await server.register(unifyFastifyPlugin, { hideContextOnProd: false });
+await server.register(unifyFastifyPlugin);
 
 await server.register(fastifyAuthPrismaPlugin, {
   config: [{url: "/public/*", method: 'GET'}],
