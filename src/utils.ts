@@ -74,10 +74,14 @@ export const refreshUserToken =
   (prisma: any) =>
   async (
     refreshToken: string,
-    { secret, accessTokenTime }: { secret: string; accessTokenTime: string },
+    {
+      secret,
+      refreshSecret,
+      accessTokenTime,
+    }: { secret: string; refreshSecret?: string; accessTokenTime: string },
   ) => {
     try {
-      verify(refreshToken, secret);
+      verify(refreshToken, refreshSecret || secret);
     } catch (error) {
       await prisma.token.deleteMany({
         where: {

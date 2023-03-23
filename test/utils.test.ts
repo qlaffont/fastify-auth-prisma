@@ -17,6 +17,7 @@ import { expiredTokenValue, userData } from './core/server';
 
 const prisma = new PrismaClient();
 const secret = 'test';
+const refreshSecret = 'testrefresh';
 
 describe('Utils function', () => {
   describe('createUserToken', () => {
@@ -105,6 +106,7 @@ describe('Utils function', () => {
     it('should be able to refresh user token ', async () => {
       const result = await createUserToken(prisma)(userData.id, {
         secret,
+        refreshSecret,
         accessTokenTime: '1d',
         refreshTokenTime: '7d',
       });
@@ -113,6 +115,7 @@ describe('Utils function', () => {
         result.refreshToken,
         {
           secret,
+          refreshSecret,
           accessTokenTime: '2d',
         },
       );

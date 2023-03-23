@@ -122,14 +122,15 @@ await server.register(fastifyAuthPrismaPlugin, {
 
 **Return** void
 
-### refreshUserToken(prisma)(refreshToken, { secret, accessTokenTime })
+### refreshUserToken(prisma)(refreshToken, { secret, refreshSecret, accessTokenTime })
 
 **Options**
 | Field Name      | Type          | Description                                                                        |
 | --------------- | ------------- | ---------------------------------------------------------------------------------- |
 | prisma          | Prisma Client |                                                                                    |
-| refreshToken    | string        | Secret use for refreshToken generation                                             |
+| refreshToken    | string        | Refresh token generated                                                            |
 | secret          | string        | Secret use for accessToken generation                                              |
+| refreshSecret   | string        | Secret use for refreshToken generation                                             |
 | accessTokenTime | string        | Time validity for accessToken [Help for time format](https://github.com/vercel/ms) |
 
 **Return**
