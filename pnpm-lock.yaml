@@ -24,7 +24,7 @@ specifiers:
   tslib: 2.5.0
   typescript: 4.9.5
   unify-errors: ^1.2.13
-  unify-fastify: 1.3.31
+  unify-fastify: 1.3.35
 
 dependencies:
   fastify: 4.5.0
@@ -52,7 +52,7 @@ devDependencies:
   tsdx: 0.14.1
   tslib: 2.5.0
   typescript: 4.9.5
-  unify-fastify: 1.3.31
+  unify-fastify: 1.3.35
 
 packages:
 
@@ -8179,8 +8179,8 @@ packages:
     resolution: {integrity: sha512-TLx/UciomKzpfG8jAf0aXBTWln3iF9jA5/ExdfbdIxktx2CJJvJWWrk0rkDOhCqZtqjmDL6RB7pR/iJP2kiY1Q==}
     engines: {node: '>=10'}
 
-  /unify-fastify/1.3.31:
-    resolution: {integrity: sha512-Oq1s52YUnJ0uaeg5UWCz6KFL0D/iXaS5STtlB/9YJhDRfwots4vNHKldiM4Iq+5FDT8Dxm5eyBlNREdVT0fgXw==}
+  /unify-fastify/1.3.35:
+    resolution: {integrity: sha512-QYb7FJQ6Ul1AjbjYwKVuBZPe3rsRVFhKkm+bv4o6RVwC7VevrB9u90xOHT0DStDFs5f+8/e8ZXUUIUG6OcZDoQ==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.5.0
