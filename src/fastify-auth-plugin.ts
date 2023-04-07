@@ -1,7 +1,8 @@
 import { FastifyInstance, FastifyRequest, HTTPMethods } from 'fastify';
-import fp from 'fastify-plugin';
 import { verify } from 'jsonwebtoken';
 import { Unauthorized } from 'unify-errors';
+//@ts-ignore
+const fp = require('fastify-plugin');
 
 import { currentUrlAndMethodIsAllowed } from './currentUrlAndMethodIsAllowed';
 
