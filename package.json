@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@jest/globals": "29.5.0",
-    "@prisma/client": "4.14.0",
+    "@prisma/client": "4.14.1",
     "@size-limit/preset-small-lib": "8.2.4",
     "@types/jest": "^29.5.0",
     "@types/jsonwebtoken": "9.0.2",
@@ -71,7 +71,7 @@
     "husky": "8.0.3",
     "jest": "^29.5.0",
     "prettier": "2.8.8",
-    "prisma": "4.14.0",
+    "prisma": "4.14.1",
     "size-limit": "8.2.4",
     "ts-jest": "^29.0.5",
     "tsdx": "0.14.1",
