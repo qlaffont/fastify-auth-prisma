@@ -56,7 +56,7 @@
     "testEnvironment": "jsdom"
   },
   "devDependencies": {
-    "@jest/globals": "29.5.0",
+    "@jest/globals": "29.6.0",
     "@prisma/client": "4.16.2",
     "@size-limit/preset-small-lib": "8.2.6",
     "@types/jest": "^29.5.0",
