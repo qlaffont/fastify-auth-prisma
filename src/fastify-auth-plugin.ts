@@ -63,8 +63,6 @@ export const fastifyAuthPrismaPlugin = fp(
           try {
             verify(tokenValue, options.secret);
           } catch (error) {
-            await options.prisma.token.delete({ where: { id: token.id } });
-
             //If token is not valid and If user is not connected and url is not public
             if (
               !currentUrlAndMethodIsAllowed(
@@ -73,6 +71,7 @@ export const fastifyAuthPrismaPlugin = fp(
                 config,
               )
             ) {
+              await options.prisma.token.delete({ where: { id: token.id } });
               throw new Unauthorized({
                 error: 'Token is not valid',
               });
