@@ -61,7 +61,7 @@ describe('Public/Private page', () => {
     it('should be able to access page with expired token', async () => {
       server = await makeServer([{ url: '/public-success', method: 'GET' }]);
 
-      const token = await prisma.token.create({
+     await prisma.token.create({
         data: {
           accessToken: expiredTokenValue,
           refreshToken: 'test',
@@ -78,15 +78,6 @@ describe('Public/Private page', () => {
       });
 
       expect(response.statusCode).toBe(200);
-
-      //Token should be deleted
-      const existingToken = await prisma.token.findFirst({
-        where: {
-          id: token.id,
-        },
-      });
-
-      expect(existingToken).toBe(null);
     });
   });
 
@@ -145,7 +136,7 @@ describe('Public/Private page', () => {
     it('should return unauthorized token is expired', async () => {
       server = await makeServer();
 
-      const token = await prisma.token.create({
+      await prisma.token.create({
         data: {
           accessToken: expiredTokenValue,
           refreshToken: 'test',
@@ -166,15 +157,6 @@ describe('Public/Private page', () => {
         error: 'Unauthorized',
         context: { error: 'Token is not valid' },
       });
-
-      //Token should be deleted
-      const existingToken = await prisma.token.findFirst({
-        where: {
-          id: token.id,
-        },
-      });
-
-      expect(existingToken).toBe(null);
     });
   });
 });

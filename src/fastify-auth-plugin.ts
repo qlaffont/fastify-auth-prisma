@@ -71,7 +71,6 @@ export const fastifyAuthPrismaPlugin = fp(
                 config,
               )
             ) {
-              await options.prisma.token.delete({ where: { id: token.id } });
               throw new Unauthorized({
                 error: 'Token is not valid',
               });
