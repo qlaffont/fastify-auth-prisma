@@ -48,6 +48,7 @@ export const fastifyAuthPrismaPlugin = fp(
     fastify.decorateRequest('connectedUser', undefined);
     fastify.decorateRequest('isConnected', false);
 
+    //@ts-ignore
     fastify.addHook('preValidation', async (req) => {
       req.isConnected = false;
 
