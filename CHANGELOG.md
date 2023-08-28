@@ -451,7 +451,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **deps:** update dependency jsonwebtoken to v9 ([60b2cd2](https://github.com/flexper/fastify-auth-prisma/commit/60b2cd206226220d5a9e29443319247591a4c24c))
+* **deps:** update dependency jsonwebtoken to v9 ([60b2cd2](https://github.com/qlaffont/fastify-auth-prisma/commit/60b2cd206226220d5a9e29443319247591a4c24c))
 
 ### 1.1.69 (2022-12-20)
 

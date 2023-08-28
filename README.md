@@ -1,8 +1,8 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/maintainability)](https://codeclimate.com/github/flexper/fastify-auth-prisma/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/test_coverage)](https://codeclimate.com/github/flexper/fastify-auth-prisma/test_coverage) ![npm](https://img.shields.io/npm/v/fastify-auth-prisma) ![npm](https://img.shields.io/npm/dm/fastify-auth-prisma) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/fastify-auth-prisma) ![NPM](https://img.shields.io/npm/l/fastify-auth-prisma)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/maintainability)](https://codeclimate.com/github/qlaffont/fastify-auth-prisma/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6e747003545ffe76ceac/test_coverage)](https://codeclimate.com/github/qlaffont/fastify-auth-prisma/test_coverage) ![npm](https://img.shields.io/npm/v/fastify-auth-prisma) ![npm](https://img.shields.io/npm/dm/fastify-auth-prisma) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/fastify-auth-prisma) ![NPM](https://img.shields.io/npm/l/fastify-auth-prisma)
 
 # Fastify-Auth-Prisma
 
-Fastify plugin with Prisma to make simple & secure authentification middleware.
+Fastify plugin with Prisma to make simple & secure authentification middleware. Old Owner: [@flexper](https://github.com/flexper)
 
 ## Usage
 

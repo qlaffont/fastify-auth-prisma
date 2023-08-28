@@ -27,14 +27,14 @@
     }
   },
   "name": "fastify-auth-prisma",
-  "author": "flexper",
+  "author": "qlaffont",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flexper/fastify-auth-prisma.git"
+    "url": "https://github.com/qlaffont/fastify-auth-prisma.git"
   },
   "bugs": {
-    "url": "https://github.com/flexper/fastify-auth-prisma/issues",
-    "email": "contact@flexper.fr"
+    "url": "https://github.com/qlaffont/fastify-auth-prisma/issues",
+    "email": "contact@qlaffont.com"
   },
   "module": "dist/fastify-auth-prisma.esm.js",
   "size-limit": [
