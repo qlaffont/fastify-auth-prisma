@@ -53,11 +53,19 @@ const makeServer = async (
 
   await server.register(unifyFastifyPlugin, { disableDetails: true });
 
+  await server.register(require('@fastify/cookie'), {
+    secret: 'test',
+    parseOptions: {
+      secure: true,
+    },
+  });
+
   await server.register(fastifyAuthPrismaPlugin, {
     config,
     prisma,
     secret: 'test',
     userValidation,
+    cookieIsSigned: true,
   });
 
   const successHandler = (_: FastifyRequest, res: FastifyReply) =>

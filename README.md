@@ -72,6 +72,7 @@ await server.register(fastifyAuthPrismaPlugin, {
 | Field Name     | Type                                             | Description                                                                        |
 | -------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | config         | {url: string, method: HttpMethods}[]             | Specify which urls are allowed without valid token                                 |
+| cookieIsSigned | boolean [OPTIONAL]                               | If cookies is used, precise if value is signed                                     |
 | secret         | string                                           | Secret use for accessToken generation                                              |
 | prisma         | Prisma Client                                    |                                                                                    |
 | userValidation | (user: Prisma[User]) => Promise<void> [OPTIONAL] | Function to run to add userValidation on request (ex: isBanned / isEmailValidated) |

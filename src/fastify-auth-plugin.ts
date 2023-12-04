@@ -10,6 +10,15 @@ declare module 'fastify' {
   //@ts-ignore
   interface FastifyRequest {
     isConnected?: boolean;
+    /**
+     * Request cookies
+     */
+    cookies?: { [cookieName: string]: string | undefined };
+  }
+
+  //@ts-ignore
+  interface FastifyReply {
+    clearCookie?: (name: string, options?: unknown) => this;
   }
 }
 
@@ -20,6 +29,7 @@ export interface FastifyAuthPrismaUrlConfig {
 
 export interface Options {
   config?: FastifyAuthPrismaUrlConfig[];
+  cookieIsSigned?: boolean;
   secret: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prisma: any;
@@ -27,8 +37,18 @@ export interface Options {
   userValidation?: (user: any) => Promise<void>;
 }
 
-export const getAccessTokenFromRequest = (req: FastifyRequest) => {
+export const getAccessTokenFromRequest = (
+  req: FastifyRequest,
+  cookieIsSigned?: boolean,
+) => {
   let token: string | undefined;
+
+  if (req.cookies && req.cookies['authorization']) {
+    token = cookieIsSigned
+      ? //@ts-ignore
+        req.unsignCookie(req.cookies['authorization']).value
+      : req.cookies['authorization'];
+  }
 
   if ((req.query as { access_token: string }).access_token) {
     token = (req.query as { access_token: string }).access_token;
@@ -49,10 +69,13 @@ export const fastifyAuthPrismaPlugin = fp(
     fastify.decorateRequest('isConnected', false);
 
     //@ts-ignore
-    fastify.addHook('preValidation', async (req) => {
+    fastify.addHook('preValidation', async (req, res) => {
       req.isConnected = false;
 
-      const tokenValue: string | undefined = getAccessTokenFromRequest(req);
+      const tokenValue: string | undefined = getAccessTokenFromRequest(
+        req,
+        options.cookieIsSigned,
+      );
 
       //Check if token existing
       if (tokenValue) {
@@ -72,6 +95,10 @@ export const fastifyAuthPrismaPlugin = fp(
                 config,
               )
             ) {
+              if (res.clearCookie) {
+                res.clearCookie('authorization', { path: '/' });
+              }
+
               throw new Unauthorized({
                 error: 'Token is not valid',
               });

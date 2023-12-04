@@ -19,6 +19,9 @@ dependencies:
     version: 1.2.124
 
 devDependencies:
+  '@fastify/cookie':
+    specifier: ^9.2.0
+    version: 9.2.0
   '@jest/globals':
     specifier: 29.6.4
     version: 29.6.4
@@ -1558,6 +1561,13 @@ packages:
       ajv: 8.11.0
       ajv-formats: 2.1.1(ajv@8.11.0)
       fast-uri: 2.1.0
+
+  /@fastify/cookie@9.2.0:
+    resolution: {integrity: sha512-fkg1yjjQRHPFAxSHeLC8CqYuNzvR6Lwlj/KjrzQcGjNBK+K82nW+UfCjfN71g1GkoVoc1GTOgIWkFJpcMfMkHQ==}
+    dependencies:
+      cookie-signature: 1.2.1
+      fastify-plugin: 4.5.0
+    dev: true
 
   /@fastify/deepmerge@1.1.0:
     resolution: {integrity: sha512-E8Hfdvs1bG6u0N4vN5Nty6JONUfTdOciyD5rn8KnEsLKIenvOVcr210BQR9t34PRkNyjqnMLGk3e0BsaxRdL+g==}
@@ -3636,6 +3646,11 @@ packages:
 
   /convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
+    dev: true
+
+  /cookie-signature@1.2.1:
+    resolution: {integrity: sha512-78KWk9T26NhzXtuL26cIJ8/qNHANyJ/ZYrmEXFzUmhZdjpBv+DlWlOANRTGBt48YcyslsLrj0bMLFTmXvLRCOw==}
+    engines: {node: '>=6.6.0'}
     dev: true
 
   /cookie@0.5.0:

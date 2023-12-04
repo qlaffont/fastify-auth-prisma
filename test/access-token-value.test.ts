@@ -63,4 +63,23 @@ describe('Access Token value', () => {
 
     await cleanToken(token);
   });
+
+  it('should be able to access token from Authorization cookie', async () => {
+    server = await makeServer();
+
+    const token = await generateToken();
+
+    const response = await server.inject({
+      method: 'GET',
+      url: '/not-public-success',
+      cookies: {
+        //@ts-ignore
+        authorization: server.signCookie(token.accessToken),
+      },
+    });
+
+    expect(response.statusCode).toBe(200);
+
+    await cleanToken(token);
+  });
 });
