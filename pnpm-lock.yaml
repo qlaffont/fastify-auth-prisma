@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.3.3
     version: 5.3.3
   unify-fastify:
-    specifier: 1.4.26
-    version: 1.4.26
+    specifier: 1.4.27
+    version: 1.4.27
 
 packages:
 
@@ -7771,7 +7771,7 @@ packages:
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
       safe-stable-stringify: 2.3.1
-      sonic-boom: 3.2.0
+      sonic-boom: 3.8.0
       thread-stream: 2.0.1
     dev: false
 
@@ -8643,17 +8643,10 @@ packages:
       - supports-color
     dev: true
 
-  /sonic-boom@3.2.0:
-    resolution: {integrity: sha512-SbbZ+Kqj/XIunvIAgUZRlqd6CGQYq71tRRbXR92Za8J/R3Yh4Av+TWENiSiEgnlwckYLyP0YZQWVfyNC0dzLaA==}
-    dependencies:
-      atomic-sleep: 1.0.0
-    dev: false
-
   /sonic-boom@3.8.0:
     resolution: {integrity: sha512-ybz6OYOUjoQQCQ/i4LU8kaToD8ACtYP+Cj5qd2AO36bwbdewxWJ3ArmJ2cr6AvxlL2o0PqnCcPGUgkILbfkaCA==}
     dependencies:
       atomic-sleep: 1.0.0
-    dev: true
 
   /source-map-resolve@0.5.3:
     resolution: {integrity: sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==}
@@ -9459,8 +9452,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unify-fastify@1.4.26:
-    resolution: {integrity: sha512-03f4453UXgooLAuLO8IduO5xyJepQrAGKVHUG3jKa7bMfay7GlpNyZa/P8bEg4weWoDwWsPhV/TkufYAY3A2Mg==}
+  /unify-fastify@1.4.27:
+    resolution: {integrity: sha512-QhZk+0jx3+ZxvyancAF/IcU708Mfs2iTZjFkZqW/GM0DsbFFMcLyr22LCqKe5kaI7jS+xK5N7Zmm+TwO9IqKzw==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.26.1
