@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.3.3
     version: 5.3.3
   unify-fastify:
-    specifier: 1.4.29
-    version: 1.4.29
+    specifier: 1.4.30
+    version: 1.4.30
 
 packages:
 
@@ -2091,7 +2091,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.13.0
+      fastq: 1.17.1
     dev: true
 
   /@pkgr/core@0.1.1:
@@ -4947,12 +4947,6 @@ packages:
       toad-cache: 3.7.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /fastq@1.13.0:
-    resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
-    dependencies:
-      reusify: 1.0.4
     dev: true
 
   /fastq@1.17.1:
@@ -9452,8 +9446,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unify-fastify@1.4.29:
-    resolution: {integrity: sha512-hFnY8+P+qef9wU1o8po/0Q96nM0Gy2DRszt1HvtmTDEnFnU2ervkXD3VJIJ1P45jFNEam2i0l5Y56O4E79uk6A==}
+  /unify-fastify@1.4.30:
+    resolution: {integrity: sha512-iDX8s4Fifj4RABPXfQY7PEZDwgfCjCtb2putlVLGMajmmC/tTzPqg8f6LBw7MGlGPANE5U53Gntr5/DE4UVTZw==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.26.1
