@@ -15,8 +15,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   unify-errors:
-    specifier: ^1.2.124
-    version: 1.2.124
+    specifier: ^1.2.208
+    version: 1.2.208
 
 devDependencies:
   '@fastify/cookie':
@@ -3513,7 +3513,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /ci-info@2.0.0:
@@ -5124,8 +5124,8 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents@2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -6280,7 +6280,7 @@ packages:
       walker: 1.0.8
       which: 2.0.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6301,7 +6301,7 @@ packages:
       micromatch: 4.0.5
       walker: 1.0.8
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /jest-jasmine2@25.5.4:
@@ -9436,15 +9436,9 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /unify-errors@1.2.124:
-    resolution: {integrity: sha512-Y3m3HrbFS2k1eZKjtnjolqXV45PK9ciw2SmY8s8fdMTahd7nZdOO5gau9di2LrxmlJlJkxn18IeDfrFhWhNRTQ==}
+  /unify-errors@1.2.208:
+    resolution: {integrity: sha512-Cp1HILaIK5k3gT9tN5eW5dLqBW72a8V+0xLFuB0aBOu560Lv3eP7hGV6NeuYPO26l8kJU9bCtuVFH0BPSjDtmg==}
     engines: {node: '>=10'}
-    dev: false
-
-  /unify-errors@1.2.204:
-    resolution: {integrity: sha512-Qw/U37kT47wmw7xuURQMQeGLHueOV3Go2jJrXrBg78z/Yimezj2I62OAu42jk9H5+7TdjlC2A/THku339qjDtQ==}
-    engines: {node: '>=10'}
-    dev: true
 
   /unify-fastify@1.4.34:
     resolution: {integrity: sha512-DdPKmmi6Z6MP0Nzay0fTiLz9CiMZMlBenjtrpMbJnivGXTraq8WNQkeVPdZf9CoPDusqjKrM0zESf13Wb9R6Sg==}
@@ -9452,7 +9446,7 @@ packages:
     dependencies:
       fastify: 4.26.1
       fastify-plugin: 4.5.1
-      unify-errors: 1.2.204
+      unify-errors: 1.2.208
     transitivePeerDependencies:
       - supports-color
     dev: true
