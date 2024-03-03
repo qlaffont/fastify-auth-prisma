@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   fastify:
-    specifier: ^4.26.2
+    specifier: ^4.15.0
     version: 4.26.2
   fastify-plugin:
     specifier: ^4.5.0
@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.3.3
     version: 5.3.3
   unify-fastify:
-    specifier: 1.4.54
-    version: 1.4.54
+    specifier: 1.4.55
+    version: 1.4.55
 
 packages:
 
@@ -2571,7 +2571,7 @@ packages:
       glob: 7.2.3
       is-glob: 4.0.3
       lodash: 4.17.21
-      semver: 7.3.7
+      semver: 7.6.0
       tsutils: 3.21.0(typescript@3.9.10)
       typescript: 3.9.10
     transitivePeerDependencies:
@@ -2593,7 +2593,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.5.4
+      semver: 7.6.0
       ts-api-utils: 1.0.1(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
@@ -2613,7 +2613,7 @@ packages:
       '@typescript-eslint/types': 7.1.0
       '@typescript-eslint/typescript-estree': 7.1.0(typescript@5.3.3)
       eslint: 8.57.0
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -9369,8 +9369,8 @@ packages:
     resolution: {integrity: sha512-M93kfnuQdgJA72ns73D3zNdWtoB6UGsolKnE8uInWrpcLsOxiGmseIasuvbBPbaxOfwOaZiTyam3V79+hVo0sQ==}
     engines: {node: '>=10'}
 
-  /unify-fastify@1.4.54:
-    resolution: {integrity: sha512-6d4ErOgSA+69kEyNxDvqWTJz/O8VGobbe/InTjidO8gSvcYvDyk7iue+zx8ekSyekqEiSX00ENWK0YnVcbpMCw==}
+  /unify-fastify@1.4.55:
+    resolution: {integrity: sha512-KzIy19WxBd+/Rg/F7I1+04BPODZeyECvKoQEdMENhuS0svEKrKApyC8qZqOkfU9TUg7lLNy+Aw/tCDfccV2K0g==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.26.2
