@@ -15,7 +15,7 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   unify-errors:
-    specifier: ^1.2.220
+    specifier: ^1.2.124
     version: 1.2.220
 
 devDependencies:
@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.4.2
     version: 5.4.2
   unify-fastify:
-    specifier: 1.4.106
-    version: 1.4.106
+    specifier: 1.4.108
+    version: 1.4.108
 
 packages:
 
@@ -9367,8 +9367,8 @@ packages:
     resolution: {integrity: sha512-PtssQ5EmRx5Q1UETSBNrbbkgj4MR9U6ZGdzcYlhDFiYC+2O/qSu/T6XVpE40UUHLHf5JBL0IpvtfWaxlypi5CA==}
     engines: {node: '>=10'}
 
-  /unify-fastify@1.4.106:
-    resolution: {integrity: sha512-lv6bdcuOqdIqG4C7kmn3QQzTeFepjKUDB+Fx6e5z70igA0UUhC6saaEsAkR1pCYNbC7NsGyrrgFp+9zxJE1wOg==}
+  /unify-fastify@1.4.108:
+    resolution: {integrity: sha512-AFw5Zuy634ZMW0mYnkdlqrnviSw4Ht6zYpnZ+XsRZ4KP/cl3YINv7aq/hfNAIU/KmuzHXynWsE/XpBFzZaM8wg==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.26.2
