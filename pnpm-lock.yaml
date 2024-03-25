@@ -15,8 +15,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   unify-errors:
-    specifier: ^1.2.124
-    version: 1.2.226
+    specifier: ^1.2.227
+    version: 1.2.227
 
 devDependencies:
   '@fastify/cookie':
@@ -9363,8 +9363,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /unify-errors@1.2.226:
-    resolution: {integrity: sha512-qskY+hKeHLHm2ILpZbHrH5Xrwp9cwvX4c8OX0KMW2i/5iJ+cELT1QQ3/8coqo9uvs5WLFkHL+an2q8LBfq/gDA==}
+  /unify-errors@1.2.227:
+    resolution: {integrity: sha512-vx0UyX05DbpTkC1ceXxuDl+Zbz/qkxgdq/uhOx3Xdsz8UhOv5u/vf2wCHkcqq06o+p4YBeI+9vlP7PkCtT4ZkQ==}
     engines: {node: '>=10'}
 
   /unify-fastify@1.4.144:
@@ -9373,7 +9373,7 @@ packages:
     dependencies:
       fastify: 4.26.2
       fastify-plugin: 4.5.1
-      unify-errors: 1.2.226
+      unify-errors: 1.2.227
     transitivePeerDependencies:
       - supports-color
     dev: true
