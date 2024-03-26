@@ -1,5 +1,5 @@
 {
-  "version": "1.2.129",
+  "version": "1.2.130",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
