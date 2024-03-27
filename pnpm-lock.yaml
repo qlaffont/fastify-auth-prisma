@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.4.3
     version: 5.4.3
   unify-fastify:
-    specifier: 1.4.151
-    version: 1.4.151
+    specifier: 1.4.152
+    version: 1.4.152
 
 packages:
 
@@ -9367,8 +9367,8 @@ packages:
     resolution: {integrity: sha512-vx0UyX05DbpTkC1ceXxuDl+Zbz/qkxgdq/uhOx3Xdsz8UhOv5u/vf2wCHkcqq06o+p4YBeI+9vlP7PkCtT4ZkQ==}
     engines: {node: '>=10'}
 
-  /unify-fastify@1.4.151:
-    resolution: {integrity: sha512-IXPKSP/wWvwpIbWFMMUnc0Mu6Tf0/9ruijKoQZMx1aqsT4UDK13P39nyTm7zRRyN7yiPoLawDzz7ZdlNm6kxjQ==}
+  /unify-fastify@1.4.152:
+    resolution: {integrity: sha512-7akYfTVTY62d9+NzQNJdEtg8lejtUpKXbslHe/BduhJpkJKpcyzoJAbms4NHih3f83WP2sEqRGIHbTZxoIGScA==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.26.2
