@@ -18,7 +18,7 @@ importers:
         specifier: ^9.0.0
         version: 9.0.2
       unify-errors:
-        specifier: ^1.3.1
+        specifier: ^1.2.124
         version: 1.3.1
     devDependencies:
       '@fastify/cookie':
@@ -88,8 +88,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       unify-fastify:
-        specifier: 1.5.12
-        version: 1.5.12
+        specifier: 1.5.15
+        version: 1.5.15
 
 packages:
 
@@ -4653,8 +4653,8 @@ packages:
     resolution: {integrity: sha512-bvDoaKWc/kwQIBbQDNkxWOZlNMvL6X92vMkVkO77+HMc2d5v++8nwTMA3/zuxeWFmeI00quSb+5remU3/vB+mg==}
     engines: {node: '>=10'}
 
-  unify-fastify@1.5.12:
-    resolution: {integrity: sha512-X+oGmhAP2nIgok4fRkPf/j5aVL6sWu2zh5Yz4LZhhY3XXjGnfTx2bOZgKDYVSa8u/VnSx+Yay75CvZ7Hd7wthA==}
+  unify-fastify@1.5.15:
+    resolution: {integrity: sha512-v/TY6alF9G12MKurcIRiEqEI1E+w0uyAoqDF/iVNVFkI6biQa1IHwU0F+Ime65y9s2DoD0VxfeBedPCHivggug==}
     engines: {node: '>=10'}
 
   union-value@1.0.1:
@@ -10658,7 +10658,7 @@ snapshots:
 
   unify-errors@1.3.1: {}
 
-  unify-fastify@1.5.12:
+  unify-fastify@1.5.15:
     dependencies:
       fastify: 4.26.2
       fastify-plugin: 4.5.1
