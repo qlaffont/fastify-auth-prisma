@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.265 (2024-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fastify to v4.27.0 ([1fa595c](https://github.com/qlaffont/fastify-auth-prisma/commit/1fa595c90cc1d3a1c0ab0ec1d9bb90fdb628a851))
+
 ### 1.2.264 (2024-05-07)
 
 ### 1.2.263 (2024-05-07)
