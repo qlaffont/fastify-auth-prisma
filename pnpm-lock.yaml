@@ -88,8 +88,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       unify-fastify:
-        specifier: 1.5.54
-        version: 1.5.54
+        specifier: 1.5.55
+        version: 1.5.55
 
 packages:
 
@@ -4658,8 +4658,8 @@ packages:
     resolution: {integrity: sha512-22nNqXU3jFN0dxsMR/5HKRDaGzQXvDckJ/kzmRiwq+mqy31numIhlZap3Uw23pyAbIvSB86LizLhCfjek6+HKg==}
     engines: {node: '>=10'}
 
-  unify-fastify@1.5.54:
-    resolution: {integrity: sha512-EjNKS7KVhHV0k+BpzDzarpxQILvt8DVAcSCBV0ThovqzkBHC36W4UBTx/9qfke32gSWp9rk9VB2/HApriJB06w==}
+  unify-fastify@1.5.55:
+    resolution: {integrity: sha512-tUZyitFkTwbJt0bOP1LCXISMx3/qysPnFXPpsnUgMAtBMwNBSIIknwXZz0Kk3IzXETTwO+WIteUBU8drYCqnzQ==}
     engines: {node: '>=10'}
 
   union-value@1.0.1:
@@ -10660,7 +10660,7 @@ snapshots:
 
   unify-errors@1.3.7: {}
 
-  unify-fastify@1.5.54:
+  unify-fastify@1.5.55:
     dependencies:
       fastify: 4.27.0
       fastify-plugin: 4.5.1
