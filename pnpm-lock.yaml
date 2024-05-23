@@ -88,8 +88,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       unify-fastify:
-        specifier: 1.5.64
-        version: 1.5.64
+        specifier: 1.5.65
+        version: 1.5.65
 
 packages:
 
@@ -2729,6 +2729,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -4669,8 +4670,8 @@ packages:
     resolution: {integrity: sha512-HQdAM1vEFdIr2G7hXeZo3EP4zg6lhV38L4QW7DCaLxZR5V06Y6is32Fv794wfPNty326FQZ8q+667MduRavcSQ==}
     engines: {node: '>=10'}
 
-  unify-fastify@1.5.64:
-    resolution: {integrity: sha512-H6Lj0zh+AHLBVrMZppqz0fCq99EcCQCxbLrcby1KaAMLzoYvlfEJFVyQwid20nl20i5z0/ewlglg6EZYY82DTQ==}
+  unify-fastify@1.5.65:
+    resolution: {integrity: sha512-VZX9c3lGqfhih387V//esGt27tIffjX4++OgEKEKlOrs9ZxkkMBQyjbAbZEVETIOeqNBKntvUabvA3HVSDtG+Q==}
     engines: {node: '>=10'}
 
   union-value@1.0.1:
@@ -10678,7 +10679,7 @@ snapshots:
 
   unify-errors@1.3.10: {}
 
-  unify-fastify@1.5.64:
+  unify-fastify@1.5.65:
     dependencies:
       fastify: 4.27.0
       fastify-plugin: 4.5.1
