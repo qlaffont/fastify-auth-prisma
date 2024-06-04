@@ -76,7 +76,7 @@
     "size-limit": "11.1.4",
     "ts-jest": "^29.0.5",
     "tsdx": "0.14.1",
-    "tslib": "2.6.2",
+    "tslib": "2.6.3",
     "typescript": "5.4.5",
     "unify-fastify": "1.5.111"
   },
