@@ -88,8 +88,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       unify-fastify:
-        specifier: 1.5.132
-        version: 1.5.132
+        specifier: 1.5.133
+        version: 1.5.133
 
 packages:
 
@@ -884,6 +884,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -891,6 +892,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -4673,8 +4675,8 @@ packages:
     resolution: {integrity: sha512-GgF44/eqLtQ+g/Edu00eEuh2Teg2NOO0K7YS58fMSqzNT9OwoS6ssEQ6hWoXFF7wzRkF+Uos6KmdSSQtEudTyg==}
     engines: {node: '>=10'}
 
-  unify-fastify@1.5.132:
-    resolution: {integrity: sha512-G2iXEmPiuZpvgKxTmDgSODlgsmpXPIk0pZzwZrMszaWVFaEUnYnAFHFOxoR23J0WuQlrt9gJFhsEVg9yI8WUag==}
+  unify-fastify@1.5.133:
+    resolution: {integrity: sha512-JXn625G2nEZnUnnfYA/OrEvr3D6nyTVAwzbcNUIxNYndz5aTgluPOdYCKLnsCYHXyzUlfiacIpuB4ptoAZB9sQ==}
     engines: {node: '>=10'}
 
   union-value@1.0.1:
@@ -10682,7 +10684,7 @@ snapshots:
 
   unify-errors@1.3.19: {}
 
-  unify-fastify@1.5.132:
+  unify-fastify@1.5.133:
     dependencies:
       fastify: 4.27.0
       fastify-plugin: 4.5.1
