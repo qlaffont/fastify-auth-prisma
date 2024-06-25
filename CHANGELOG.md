@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.403 (2024-06-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unify-errors to v1.3.28 ([d1dc77e](https://github.com/qlaffont/fastify-auth-prisma/commit/d1dc77ec6557bdc922a2669f9a71de12db14ae90))
+
 ### 1.2.402 (2024-06-25)
 
 ### 1.2.401 (2024-06-24)
