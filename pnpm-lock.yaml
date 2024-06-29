@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       fastify:
-        specifier: ^4.28.1
+        specifier: ^4.15.0
         version: 4.28.1
       fastify-plugin:
         specifier: ^4.5.0
@@ -88,8 +88,8 @@ importers:
         specifier: 5.5.2
         version: 5.5.2
       unify-fastify:
-        specifier: 1.5.202
-        version: 1.5.202
+        specifier: 1.5.204
+        version: 1.5.204
 
 packages:
 
@@ -4667,8 +4667,8 @@ packages:
     resolution: {integrity: sha512-vefmpo+0PsY3vh8fbkL4AD3WEdAG6MEOmix5VqspX6BqIIA0bfUkZvEhp+4hfMZqKUbicD5VRjjf4iAKIG4c/Q==}
     engines: {node: '>=10'}
 
-  unify-fastify@1.5.202:
-    resolution: {integrity: sha512-uvm+SCuDYdlu5JIWnNU9SN+iIET22tjt1mM8BsYWqOpU3yG9fthDWZLh74pFcPUw7HYnmhSyAT9tZcZ6++xOQg==}
+  unify-fastify@1.5.204:
+    resolution: {integrity: sha512-wfV21nv8smuLMeU6zKF3PcB2VNmXacI+WAHG5xe8Zuk01GMF8tlAvzXztGeCfu0O/FX9OV0GfcdsxtxNzmg7mA==}
     engines: {node: '>=10'}
 
   union-value@1.0.1:
@@ -6393,7 +6393,7 @@ snapshots:
       glob: 7.2.3
       is-glob: 4.0.3
       lodash: 4.17.21
-      semver: 7.6.0
+      semver: 7.6.2
       tsutils: 3.21.0(typescript@3.9.10)
     optionalDependencies:
       typescript: 3.9.10
@@ -10666,7 +10666,7 @@ snapshots:
 
   unify-errors@1.3.28: {}
 
-  unify-fastify@1.5.202:
+  unify-fastify@1.5.204:
     dependencies:
       fastify: 4.28.1
       fastify-plugin: 4.5.1
