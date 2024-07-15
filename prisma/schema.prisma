@@ -7,6 +7,12 @@ datasource db {
   provider = "postgresql"
   url      = "postgresql://docker:docker@localhost:5432/project"
 }
+generator drizzle {
+  provider = "prisma-generator-drizzle"
+
+  // Specify the output directory
+  output = "./lib/drizzle/models"
+}
 
 model Token {
   id           String @id @unique @default(uuid())
