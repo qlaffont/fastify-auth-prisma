@@ -51,6 +51,7 @@ const makeServer = async (
 ): Promise<FastifyInstance> => {
   const server = fastify();
 
+  //@ts-ignore
   await server.register(unifyFastifyPlugin, { disableDetails: true });
 
   await server.register(require('@fastify/cookie'), {
