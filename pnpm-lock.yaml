@@ -80,8 +80,8 @@ devDependencies:
     specifier: 5.5.3
     version: 5.5.3
   unify-fastify:
-    specifier: 1.5.230
-    version: 1.5.230
+    specifier: 1.5.231
+    version: 1.5.231
 
 packages:
 
@@ -9567,8 +9567,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /unify-fastify@1.5.230:
-    resolution: {integrity: sha512-4EYFkI/PYcbSorJb2BjWVwvrsF6ajCEyJwUsUeIIRfr3pLqXv20mIw2GqkZBY1GO1jC4N27WqQEbDfdrus4l7Q==}
+  /unify-fastify@1.5.231:
+    resolution: {integrity: sha512-lK90RFJy/XBrHjy+LPgBH9lzrVCKoluoITTXqdzSsOOROSgpwkIVqIsNvq526pjyFSGLfdU50j2joGzRam69dQ==}
     engines: {node: '>=10'}
     dependencies:
       fastify: 4.28.1
